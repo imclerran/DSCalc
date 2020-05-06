@@ -1,11 +1,220 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="#EFEFEF">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/mainScrollView1"
+		android:layout_alignParentTop="true"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp">
 
-</LinearLayout>
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:text="Seam Width (max):"/>
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:inputType="number"
+					android:layout_width="match_parent"
+					android:id="@+id/txtSeamWidth"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:text="Body Hook (min):"/>
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:inputType="number"
+					android:layout_width="match_parent"
+					android:ems="10"
+					android:id="@+id/txtBodyHook"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:text="Cover Hook (min):"/>
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:inputType="number"
+					android:layout_width="match_parent"
+					android:ems="10"
+					android:id="@+id/txtCoverHook"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:layout_marginTop="8dp">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:layout_width="wrap_content"
+					android:text="Double Seam Calculator"
+					android:textStyle="bold"
+					android:layout_marginEnd="4dp"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:layout_width="wrap_content"
+					android:text="by IFMdev"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_alignParentBottom="true"
+		android:orientation="vertical"
+		android:background="#898989"
+		android:elevation="10dp">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_above="@+id/hllResults"
+			android:background="#B0B0B0"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_marginRight="4dp"
+			android:layout_marginLeft="4dp"
+			android:layout_marginTop="4dp"
+			android:id="@+id/hllOverlap"
+			android:background="#ECECEC">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:textColor="#000000"
+				android:paddingEnd="4dp"
+				android:paddingStart="4dp"
+				android:text="Overlap:"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="match_parent"
+				android:id="@+id/lblOverlap"
+				android:ems="7"
+				android:gravity="center"
+				android:textColor="#000000"
+				android:paddingEnd="4dp"
+				android:paddingStart="4dp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_marginRight="4dp"
+			android:layout_marginLeft="4dp"
+			android:layout_marginTop="2dp"
+			android:id="@+id/hllBHB"
+			android:background="#ECECEC">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:textColor="#000000"
+				android:paddingEnd="4dp"
+				android:paddingStart="4dp"
+				android:text="BHB%:"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="fill_parent"
+				android:id="@+id/lblBHB"
+				android:ems="7"
+				android:gravity="center"
+				android:textColor="#000000"
+				android:paddingEnd="4dp"
+				android:paddingStart="4dp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:id="@+id/hllButtons"
+			android:weightSum="2.0"
+			android:layout_alignParentBottom="true">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="Calculate"
+				android:id="@+id/btnCalculate"
+				android:layout_weight="1.0"
+				android:onClick="btnCalculateOnClick"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="Clear"
+				android:layout_weight="1.0"
+				android:id="@+id/btnClear"
+				android:onClick="btnClearOnClick"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>
+
